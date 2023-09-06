@@ -36,55 +36,55 @@ DROP TABLE IF EXISTS EmployeeJobTitles;
 -- These statements create the employee tables.
 CREATE TABLE 
 	EmployeeJobTitles
-	    (employeeTitleID VARCHAR(10),
-	     jobTitle VARCHAR(40) NOT NULL,
-            PRIMARY KEY (employeeTitleID));
+		(employeeTitleID VARCHAR(10),
+	     	 jobTitle VARCHAR(40) NOT NULL,
+            		PRIMARY KEY (employeeTitleID));
 
 CREATE TABLE 
-    Employees 
-        (employeeIDNumber INT,
-	     employeeTitleID VARCHAR(10) NOT NULL,
-	     birthDate DATE NOT NULL,
-             firstName VARCHAR(40) NOT NULL,
-	     lastName VARCHAR(40) NOT NULL,
-	     sex VARCHAR(1) NOT NULL,
-	     hireDate DATE NOT NULL,
-            PRIMARY KEY (employeeIDNumber),
-            FOREIGN KEY (employeeTitleID) 
-                REFERENCES EmployeeJobTitles (employeeTitleID));
+	Employees 
+        	(employeeIDNumber INT,
+	     	 employeeTitleID VARCHAR(10) NOT NULL,
+	     	 birthDate DATE NOT NULL,
+             	 firstName VARCHAR(40) NOT NULL,
+	     	 lastName VARCHAR(40) NOT NULL,
+	     	 sex VARCHAR(1) NOT NULL,
+	     	 hireDate DATE NOT NULL,
+           		PRIMARY KEY (employeeIDNumber),
+            		FOREIGN KEY (employeeTitleID) 
+                		REFERENCES EmployeeJobTitles (employeeTitleID));
 
 CREATE TABLE 
-    EmployeeSalaries
-        (employeeIDNumber INT,
-	     employeeSalary INT NOT NULL,
-            PRIMARY KEY (employeeIDNumber),
-	        FOREIGN KEY (employeeIDNumber)
-                REFERENCES Employees (employeeIDNumber));
+    	EmployeeSalaries
+        	(employeeIDNumber INT,
+	     	 employeeSalary INT NOT NULL,
+            		PRIMARY KEY (employeeIDNumber),
+	        	FOREIGN KEY (employeeIDNumber)
+                		REFERENCES Employees (employeeIDNumber));
 
 
 -- These statements create the department tables.
 CREATE TABLE 
-    Departments 
-        (departmentID VARCHAR(10),
-	     departmentName VARCHAR(40) NOT NULL,
-	        PRIMARY KEY (departmentID));
+    	Departments 
+        	(departmentID VARCHAR(10),
+	     	 departmentName VARCHAR(40) NOT NULL,
+	        	PRIMARY KEY (departmentID));
 
 CREATE TABLE 
-    DepartmentManagers
-	    (departmentID VARCHAR(10),
-	     employeeIDNumber INT,
-	        PRIMARY KEY (departmentID, employeeIDNumber),
-            FOREIGN KEY (departmentID) 
-                REFERENCES Departments (departmentID),
-	        FOREIGN KEY (employeeIDNumber) 
-                REFERENCES Employees (employeeIDNumber));
+    	DepartmentManagers
+	    	(departmentID VARCHAR(10),
+	     	 employeeIDNumber INT,
+	        	PRIMARY KEY (departmentID, employeeIDNumber),
+            		FOREIGN KEY (departmentID) 
+                		REFERENCES Departments (departmentID),
+	        	FOREIGN KEY (employeeIDNumber) 
+                		REFERENCES Employees (employeeIDNumber));
 
 CREATE TABLE 
-    DepartmentIDPerEmployee 
-        (employeeIDNumber INT,
-	     departmentID VARCHAR(10),
-	        PRIMARY KEY (employeeIDNumber, departmentID),
-	        FOREIGN KEY (employeeIDNumber) 
-                REFERENCES Employees (employeeIDNumber),
-	        FOREIGN KEY (departmentID) 
-                REFERENCES Departments (departmentID));
+    	DepartmentIDPerEmployee 
+        	(employeeIDNumber INT,
+	     	 departmentID VARCHAR(10),
+	        	PRIMARY KEY (employeeIDNumber, departmentID),
+	        	FOREIGN KEY (employeeIDNumber) 
+                		REFERENCES Employees (employeeIDNumber),
+	        	FOREIGN KEY (departmentID) 
+                		REFERENCES Departments (departmentID));
