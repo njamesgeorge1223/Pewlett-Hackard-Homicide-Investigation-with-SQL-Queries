@@ -2,4 +2,4 @@ The SQL scripts for database creation and querying are in the EmployeeSQL folder
 
 If you have not installed them, here are the instructions:
 
--- In your browser, go to [Download PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads)https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+-- In your browser, go to [Download PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads).
