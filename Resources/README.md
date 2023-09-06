@@ -1,1 +1,1 @@
-This folder holds the data files for the database tables in the Pewlett Hackard SQL Challenge.
+This folder holds the employee data files in the Pewlett Hackard SQL Challenge.
