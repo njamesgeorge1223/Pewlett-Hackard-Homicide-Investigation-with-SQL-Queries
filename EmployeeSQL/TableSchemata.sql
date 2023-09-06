@@ -45,7 +45,7 @@ CREATE TABLE
         (employeeIDNumber INT,
 	     employeeTitleID VARCHAR(10) NOT NULL,
 	     birthDate DATE NOT NULL,
-         firstName VARCHAR(40) NOT NULL,
+             firstName VARCHAR(40) NOT NULL,
 	     lastName VARCHAR(40) NOT NULL,
 	     sex VARCHAR(1) NOT NULL,
 	     hireDate DATE NOT NULL,
