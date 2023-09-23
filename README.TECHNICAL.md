@@ -2,7 +2,6 @@ The SQL scripts for database creation and querying are in the EmployeeSQL folder
 
 If you have not installed them, here are the instructions:
 
-
 * In your browser, Mac users should go to [Mac Download PostgreSQL](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads), and Windows users should go to [Windows Download PostgreSQL](https://www.pgadmin.org/download/pgadmin-4-macos/).
 
 * Select the download option for your operating system and for the latest version 14.x of PostgreSQL.
@@ -22,4 +21,3 @@ If you have not installed them, here are the instructions:
 * The final screen will be the Pre Installation Summary.
 
 * To confirm the installation, start pgAdmin (it will open in a new browser window). Connect to the default server by clicking on it and entering the password if prompted.
-
