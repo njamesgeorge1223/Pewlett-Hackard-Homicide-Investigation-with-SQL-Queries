@@ -1,4 +1,4 @@
-This folder holds the employee data files for the Postgres Database's tables.
+This folder includes the employee data in CSV files for the Postgres Database's tables.
 
 ----
 
