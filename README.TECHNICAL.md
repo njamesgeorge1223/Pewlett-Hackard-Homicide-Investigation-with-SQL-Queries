@@ -36,7 +36,7 @@ If you have not installed them, here are the instructions:
 
 ----
 
-The administrative and development tool, pgAdmin4, requires the CSV files in the Resources folder for populating the database tables.  Also, with pgAdmin4, the two SQL scripts create the database tables and run the queries.
+The administrative and development tool, pgAdmin4, uses the CSV files in the Resources folder for populating the database tables.  Also, with pgAdmin4, the two SQL scripts create the database tables and run the queries.
 
 TableSchemata.sql
 
