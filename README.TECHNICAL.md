@@ -38,10 +38,6 @@ If you have not installed them, here are the instructions:
 
 The administrative and development tool, pgAdmin4, uses the CSV files in the Resources folder for populating the database tables.  Also, with pgAdmin4, the two SQL scripts create the database tables and run the queries.
 
-TableSchemata.sql
-
-EmployeeQueries.sql
-
 DepartmentIDPerEmployee.csv
 
 DepartmentManagers.csv
@@ -53,6 +49,10 @@ EmployeeJobTitles.csv
 Employees.csv
 
 EmployeeSalaries.csv
+
+EmployeeQueries.sql
+
+TableSchemata.sql
 
 ----
 
