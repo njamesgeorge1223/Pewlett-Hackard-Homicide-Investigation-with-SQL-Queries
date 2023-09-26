@@ -1,4 +1,4 @@
-This folder holds the images of query results and the database's Entity Relationship Diagram.
+This folder holds the images of query results from a Postgres Database as well as the database's Entity Relationship Diagram.
 
 ----
 
