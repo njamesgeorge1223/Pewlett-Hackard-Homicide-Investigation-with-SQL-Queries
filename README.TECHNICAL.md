@@ -142,11 +142,11 @@ pgAdmin4, Postgres
 
 ----
 
-[PgAdmin Documentation](https://www.postgresql.org/docs/) \
+[PgAdmin Documentation](https://www.postgresql.org/docs/)
 
-[Postgres Documentation](https://www.pgadmin.org/docs/) \
+[Postgres Documentation](https://www.pgadmin.org/docs/)
 
-[PostgresSQL Documentation](https://www.postgresql.org/docs/) \
+[PostgresSQL Documentation](https://www.postgresql.org/docs/)
 
 ----
 
