@@ -116,7 +116,7 @@ pgAdmin4, Postgres
   
   &emsp; |&rarr; [./Images/Query8.png](./Images/Query8.png)
 
-  &emsp; |&rarr; [./Images/QuickDBD-Pewlett Hackard SQL Challenge.png](./Images/QuickDBD-Pewlett Hackard SQL Challenge.png)
+  &emsp; |&rarr; [./Images/QuickDBD-PewlettHackardSQLChallenge.png](./Images/QuickDBD-PewlettHackardSQLChallenge.png)
   
   &emsp; |&rarr; [./Images/README.md](./Images/README.md)
 
