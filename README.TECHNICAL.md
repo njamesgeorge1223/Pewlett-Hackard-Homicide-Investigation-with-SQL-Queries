@@ -6,7 +6,7 @@
 
 ----
 
-The SQL scripts require the installation of PostgreSQL and pdAdmin to run. i
+The SQL scripts require the installation of PostgreSQL and pdAdmin to run.
 
 If you have not installed them, here are the instructions:
 
