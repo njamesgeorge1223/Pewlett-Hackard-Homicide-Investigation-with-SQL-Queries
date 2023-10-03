@@ -169,12 +169,15 @@ SELECT
 	Employees.sex,
 	Employees.birthDate,
 	Employees.hireDate,
+	EmployeeJobTitles.jobTitle,
 	Departments.departmentName
 FROM Employees
 	JOIN DepartmentIDPerEmployee
 		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
 	JOIN Departments
 		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
+	JOIN EmployeeJobTitles
+		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
 	WHERE EXTRACT(YEAR FROM Employees.hireDate) = 1986 
 		AND firstName = 'Hercules' AND lastName like 'B%'
 	ORDER BY Employees.lastName, 
