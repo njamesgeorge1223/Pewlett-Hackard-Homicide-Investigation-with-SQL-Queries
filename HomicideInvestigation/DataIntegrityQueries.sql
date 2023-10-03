@@ -39,15 +39,27 @@ FROM DepartmentIDPerEmployee;
 
 
 -- In descending order, display the department count 
--- for each employee. 
+-- for each employee record. 
 SELECT
-    DepartmentIDPerEmployee.employeeIDNumber, 
+    Employees.employeeIDNumber,
+	Employees.lastName, 
+	Employees.firstName,
+	Employees.sex,
+	Employees.birthDate,
+	EmployeeJobTitles.jobTitle,
 	COUNT (DepartmentIDPerEmployee.employeeIDNumber)
 		AS departmentIDFrequencyCount
-FROM DepartmentIDPerEmployee
-	GROUP BY DepartmentIDPerEmployee.employeeIDNumber
+FROM Employees
+	JOIN EmployeeJobTitles
+		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
+	JOIN DepartmentIDPerEmployee
+		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
+	GROUP BY Employees.employeeIDNumber, 
+			 EmployeeJobTitles.jobTitle
 		HAVING COUNT (DepartmentIDPerEmployee.employeeIDNumber) > 1
-	ORDER BY departmentIDFrequencyCount DESC;
+	ORDER BY (COUNT (DepartmentIDPerEmployee.employeeIDNumber), 
+			  Employees.lastName, 
+			  Employees.firstName) DESC;
 
 
 -- ***********************************************
@@ -68,13 +80,13 @@ SELECT
 FROM DepartmentManagers;
 
 
--- Count number of distinct employee ID numbers.
+-- Count number of distinct employee ID numbers among Department Managers.
 SELECT 
 	COUNT (DISTINCT DepartmentManagers.employeeIDNumber) 
 FROM DepartmentManagers;
 
 
--- Display any duplicate employee ID numbers.
+-- Display any duplicate employee ID numbers among Department Managers.
 SELECT
     DepartmentManagers.employeeIDNumber, 
 	COUNT (DepartmentManagers.employeeIDNumber) 
@@ -109,7 +121,35 @@ SELECT COUNT (*) FROM EmployeeJobTitles
 
 
 -- ***********************************************
--- 1.5: Database Table: Employees
+-- 1.5: Database Table: EmployeeSalaries
+-- ***********************************************
+
+-- Display all the data in the table.
+SELECT * FROM EmployeeSalaries
+
+
+-- Count the number of rows in the table.
+SELECT COUNT(*) FROM EmployeeSalaries
+
+
+-- Count the number of distinct employee IDS.
+SELECT 
+	COUNT (DISTINCT EmployeeSalaries.employeeIDNumber) 
+FROM EmployeeSalaries;
+
+
+-- Display any duplicate employee IDs.
+SELECT
+    EmployeeSalaries.employeeIDNumber,
+	COUNT (EmployeeSalaries.employeeIDNumber)
+FROM EmployeeSalaries
+	GROUP BY EmployeeSalaries.employeeIDNumber
+		HAVING COUNT (EmployeeSalaries.employeeIDNumber) > 1
+    ORDER BY EmployeeSalaries.employeeIDNumber
+
+
+-- ***********************************************
+-- 1.6: Database Table: Employees
 -- ***********************************************
 
 -- Display all the data in the table.
@@ -168,6 +208,35 @@ SELECT
 FROM Employees
 	GROUP BY Employees.birthDate
 	ORDER BY birthDateFrequencyCount ASC;
+
+
+-- In descending order, display the number of employees for each gender.
+SELECT
+	Employees.sex,
+	COUNT(Employees.sex)
+		AS genderFrequencyCount
+FROM Employees
+	GROUP BY Employees.sex
+	ORDER BY Employees.sex DESC;
+
+
+-- In descending order, display the number of employees hired per hire date.
+SELECT 
+	Employees.hireDate,
+	COUNT(Employees.hireDate)
+		AS hireDateFrequencyCount
+FROM Employees
+	GROUP BY Employees.hireDate
+	ORDER BY hireDateFrequencyCount DESC;
+	
+-- In ascending order, display the number of employees hired per hire date.
+SELECT 
+	Employees.hireDate,
+	COUNT(Employees.hireDate)
+		AS hireDateFrequencyCount
+FROM Employees
+	GROUP BY Employees.hireDate
+	ORDER BY hireDateFrequencyCount ASC;
 
 
 -- Count the number of distinct last names.
@@ -276,59 +345,87 @@ FROM Employees
 	WHERE Employees.lastName = 'Baalen' AND Employees.firstName = 'Rosalyn';
 
 
--- In descending order, display the number of employees for each gender.
+-- This statement retrieves all employee records.
 SELECT
+	Employees.employeeIDNumber,
+	Employees.lastName, 
+	Employees.firstName,
 	Employees.sex,
-	COUNT(Employees.sex)
-		AS genderFrequencyCount
-FROM Employees
-	GROUP BY Employees.sex
-	ORDER BY Employees.sex DESC;
-
-
--- In descending order, display the number of employees hired per hire date.
-SELECT 
+	Employees.birthDate,
 	Employees.hireDate,
-	COUNT(Employees.hireDate)
-		AS hireDateFrequencyCount
+	EmployeeJobTitles.jobTitle,
+	EmployeeSalaries.employeeSalary
 FROM Employees
-	GROUP BY Employees.hireDate
-	ORDER BY hireDateFrequencyCount DESC;
-	
--- In ascending order, display the number of employees hired per hire date.
+	JOIN EmployeeJobTitles
+		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
+	JOIN EmployeeSalaries
+		ON Employees.employeeIDNumber = EmployeeSalaries.employeeIDNumber
+	ORDER BY Employees.lastName, Employees.firstName;
+
+
+-- This statement lists all employee records with department information.
 SELECT 
+	Employees.employeeIDNumber,
+	Employees.lastName, 
+	Employees.firstName,
+	Employees.sex,
+	Employees.birthDate,
 	Employees.hireDate,
-	COUNT(Employees.hireDate)
-		AS hireDateFrequencyCount
+	EmployeeJobTitles.jobTitle,
+	Departments.departmentName
 FROM Employees
-	GROUP BY Employees.hireDate
-	ORDER BY hireDateFrequencyCount ASC;
+	JOIN EmployeeJobTitles
+		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
+	JOIN DepartmentIDPerEmployee
+		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
+	JOIN Departments
+		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
+	ORDER BY Employees.lastName, Employees.firstName ASC;
 
 
--- ***********************************************
--- 1.6: Database Table: EmployeeSalaries
--- ***********************************************
-
--- Display all the data in the table.
-SELECT * FROM EmployeeSalaries
-
-
-
--- Count the number of rows in the table.
-SELECT COUNT(*) FROM EmployeeSalaries
-
-
--- Count the number of distinct employee IDS.
+-- This statement lists employees with a count of their departments in descending order.
 SELECT 
-	COUNT (DISTINCT EmployeeSalaries.employeeIDNumber) 
-FROM EmployeeSalaries;
+	Employees.employeeIDNumber,
+	Employees.lastName, 
+	Employees.firstName,
+	Employees.sex,
+	Employees.birthDate,
+	Employees.hireDate,
+	EmployeeJobTitles.jobTitle,
+	COUNT (Departments.departmentID)
+		AS departmentFrequencyCount
+FROM Employees
+	JOIN EmployeeJobTitles
+		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
+	JOIN DepartmentIDPerEmployee
+		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
+	JOIN Departments
+		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
+	GROUP BY Employees.employeeIDNumber, EmployeeJobTitles.jobTitle
+		HAVING COUNT (Departments.departmentID) > 1
+	ORDER BY departmentFrequencyCount DESC;
 
 
--- Display any duplicate employee IDs.
-SELECT
-    EmployeeSalaries.employeeIDNumber,
-	COUNT (EmployeeSalaries.employeeIDNumber)
-FROM EmployeeSalaries
-	GROUP BY EmployeeSalaries.employeeIDNumber
-		HAVING COUNT (EmployeeSalaries.employeeIDNumber) > 1
-    ORDER BY EmployeeSalaries.employeeIDNumber
+-- This statement lists employees with a count of their departments and a count 
+-- of unique job titles in descending order.
+SELECT 
+	Employees.employeeIDNumber,
+	Employees.lastName, 
+	Employees.firstName,
+	Employees.sex,
+	Employees.birthDate,
+	Employees.hireDate,
+	COUNT (DISTINCT EmployeeJobTitles.jobTitle)
+		AS distinctJobTitleFrequencyCount,
+	COUNT (Departments.departmentID)
+		AS departmentFrequencyCount
+FROM Employees
+	JOIN DepartmentIDPerEmployee
+		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
+	JOIN Departments
+		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
+	JOIN EmployeeJobTitles
+		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
+	GROUP BY Employees.employeeIDNumber
+		HAVING COUNT(Departments.departmentID) > 1
+	ORDER BY distinctJobTitleFrequencyCount DESC;

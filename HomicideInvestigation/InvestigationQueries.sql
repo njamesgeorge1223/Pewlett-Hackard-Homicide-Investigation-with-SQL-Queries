@@ -13,98 +13,8 @@
 --
 --******************************************************************************************/
 
--- ***********************************************
--- 1.1: Employee Count Discrepancy
--- ***********************************************
-
--- This statement retrieves all employee records.
-SELECT
-	Employees.employeeIDNumber,
-	Employees.lastName, 
-	Employees.firstName,
-	Employees.sex,
-	Employees.birthDate,
-	Employees.hireDate,
-	EmployeeJobTitles.jobTitle,
-	EmployeeSalaries.employeeSalary
-FROM Employees
-	JOIN EmployeeJobTitles
-		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
-	JOIN EmployeeSalaries
-		ON Employees.employeeIDNumber = EmployeeSalaries.employeeIDNumber
-	ORDER BY Employees.lastName, Employees.firstName;
-
-
--- This statement lists all employee records with department information.
-SELECT 
-	Employees.employeeIDNumber,
-	Employees.lastName, 
-	Employees.firstName,
-	Employees.sex,
-	Employees.birthDate,
-	Employees.hireDate,
-	EmployeeJobTitles.jobTitle,
-	Departments.departmentName
-FROM Employees
-	JOIN EmployeeJobTitles
-		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
-	JOIN DepartmentIDPerEmployee
-		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
-	JOIN Departments
-		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
-	ORDER BY Employees.lastName, Employees.firstName ASC;
-
-
--- This statement lists employees with a count of their departments in descending order.
-SELECT 
-	Employees.employeeIDNumber,
-	Employees.lastName, 
-	Employees.firstName,
-	Employees.sex,
-	Employees.birthDate,
-	Employees.hireDate,
-	EmployeeJobTitles.jobTitle,
-	COUNT (Departments.departmentID)
-		AS departmentFrequencyCount
-FROM Employees
-	JOIN EmployeeJobTitles
-		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
-	JOIN DepartmentIDPerEmployee
-		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
-	JOIN Departments
-		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
-	GROUP BY Employees.employeeIDNumber, EmployeeJobTitles.jobTitle
-		HAVING COUNT (Departments.departmentID) > 1
-	ORDER BY departmentFrequencyCount DESC;
-
-
--- This statement lists employees with a count of their departments and a count 
--- of unique job titles in descending order.
-SELECT 
-	Employees.employeeIDNumber,
-	Employees.lastName, 
-	Employees.firstName,
-	Employees.sex,
-	Employees.birthDate,
-	Employees.hireDate,
-	COUNT (DISTINCT EmployeeJobTitles.jobTitle)
-		AS distinctJobTitleFrequencyCount,
-	COUNT (Departments.departmentID)
-		AS departmentFrequencyCount
-FROM Employees
-	JOIN DepartmentIDPerEmployee
-		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
-	JOIN Departments
-		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
-	JOIN EmployeeJobTitles
-		ON Employees.employeeTitleID = EmployeeJobTitles.employeeTitleID
-	GROUP BY Employees.employeeIDNumber
-		HAVING COUNT(Departments.departmentID) > 1
-	ORDER BY distinctJobTitleFrequencyCount DESC;
-
-
 -- ******************************************
--- 1.2: Managers
+-- 1.1: Managers
 -- ******************************************
 
 -- This statement lists all the department managers.
@@ -121,7 +31,8 @@ FROM Employees
 		ON Employees.employeeIDNumber = DepartmentManagers.employeeIDNumber
 	JOIN Departments
 		ON DepartmentManagers.departmentID = Departments.departmentID
-	ORDER BY Employees.lastName, Employees.firstName;
+	ORDER BY Employees.lastName, 
+			 Employees.firstName;
 
 
 -- This statement lists all the department managers with their number of departments.
@@ -146,7 +57,7 @@ FROM Employees
 
 
 -- ******************************************
--- 1.3: Employees
+-- 1.2: Employees
 -- ******************************************
 
 -- This statement lists each year and the number of hires.
@@ -203,7 +114,6 @@ FROM DepartmentIDPerEmployee
 	ORDER BY departmentFrequencyCount DESC;
 
 
-
 -- This statement lists all employees in the Sales Department.
 SELECT 
 	Employees.employeeIDNumber,
@@ -247,7 +157,7 @@ FROM employees
 
 
 -- ******************************************
--- 2.4: Suspects
+-- 1.3: Suspects
 -- ******************************************
 
 -- This statement lists employees whose first name is Hercules, whose last name begins with the letter B, and who
