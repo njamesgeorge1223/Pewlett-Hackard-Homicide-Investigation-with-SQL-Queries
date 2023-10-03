@@ -3,8 +3,8 @@
 --  File Name:  TableSchemata.sql
 --
 --  File Description:
---      This file contains the SQL script to create and populate database tables 
---      for the Pewlett Hackard SQL Challenge containing legacy employee information.
+--      This file contains the SQL script for creating the database tables 
+--      for the Pewlett Hackard Homicide Investigation.
 --
 --
 --  Date               Description                              Programmer
@@ -33,7 +33,8 @@ DROP TABLE IF EXISTS titles;
 DROP TABLE IF EXISTS EmployeeJobTitles;
 
 
--- These statements create the database table for employees.
+-- These statements create the database tables for employee information.
+
 CREATE TABLE 
 	EmployeeJobTitles
 	    (employeeTitleID VARCHAR(10),
@@ -62,7 +63,8 @@ CREATE TABLE
                 REFERENCES Employees (employeeIDNumber));
 
 
--- These statements create the database tables for departments.
+-- These statements create the database tables for department information.
+
 CREATE TABLE 
     Departments 
         (departmentID VARCHAR(10),

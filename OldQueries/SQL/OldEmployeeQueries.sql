@@ -3,7 +3,8 @@
 --  File Name:  EmployeeQueries.sql
 --
 --  File Description:
---      The file contains the SQL query scripts or the Pewlett Hackard SQL Challenge.
+--      The file contains the SQL query scripts for the Pewlett Hackard legacy employee
+--      information.
 --
 --
 --  Date               Description                              Programmer
@@ -68,7 +69,7 @@ SELECT
 	Employees.lastName, 
 	Employees.sex 
 FROM Employees
-	WHERE firstName = 'Hercules' AND lastName like 'B%';
+	WHERE Employees.firstName = 'Hercules' AND Employees.lastName like 'B%';
 
 -- This statement lists each employee in the Sales department, including their employee number, 
 -- last name, and first name.
@@ -77,11 +78,11 @@ SELECT
 	Employees.lastName,
 	Employees.firstName 
 FROM employees
-		JOIN DepartmentIDPerEmployee
-			ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
-		JOIN Departments
-			ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
-				WHERE departmentName = 'Sales';
+	JOIN DepartmentIDPerEmployee
+		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
+	JOIN Departments
+		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
+	WHERE departmentName = 'Sales';
 
 -- This statement lists each employee in the Sales and Development departments, including their 
 -- employee number, last name, first name, and department name.
@@ -91,18 +92,18 @@ SELECT
 	Employees.firstName,
 	Departments.departmentName
 FROM Employees
-	join DepartmentIDPerEmployee
-		on Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
-	join Departments
-		on DepartmentIDPerEmployee.departmentID = Departments.departmentID
-			where departmentName IN ('Sales', 'Development');
+	JOIN DepartmentIDPerEmployee
+		ON Employees.employeeIDNumber = DepartmentIDPerEmployee.employeeIDNumber
+	JOIN Departments
+		ON DepartmentIDPerEmployee.departmentID = Departments.departmentID
+			WHERE Departments.departmentName IN ('Sales', 'Development');
 
 -- In descending order, list the frequency count of employee last names 
 -- (id est, how many employees share each last name).
 SELECT 
-	lastName, 
-	COUNT(lastName) 
+	Employees.lastName, 
+	COUNT(Employees.lastName) 
 		AS lastNameFrequencyCount
 FROM Employees
-	GROUP BY lastName
+	GROUP BY Employees.lastName
 		ORDER BY lastNameFrequencyCount DESC;
