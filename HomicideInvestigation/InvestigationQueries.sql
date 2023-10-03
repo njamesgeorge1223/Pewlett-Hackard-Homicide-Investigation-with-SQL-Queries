@@ -184,6 +184,23 @@ FROM Employees
 	 		 Employees.firstName;
 
 
+-- This statement lists each employees who were manages in either the Sales or Development departments.
+SELECT 
+	Employees.employeeIDNumber, 
+	Employees.lastName, 
+	Employees.firstName,
+	Employees.sex,
+	Employees.birthDate,
+	Employees.hireDate,
+	Departments.departmentName
+FROM Employees
+	JOIN DepartmentManagers
+		ON Employees.employeeIDNumber = DepartmentManagers.employeeIDNumber
+	JOIN Departments
+		ON DepartmentManagers.departmentID = Departments.departmentID
+	WHERE Departments.departmentName IN ('Sales', 'Development');
+
+
 -- This statement lists each employees who were hired in 1986 and were a manager in either the Sales 
 -- or Development departments.
 SELECT 
@@ -199,6 +216,6 @@ FROM Employees
 		ON Employees.employeeIDNumber = DepartmentManagers.employeeIDNumber
 	JOIN Departments
 		ON DepartmentManagers.departmentID = Departments.departmentID
-	WHERE EXTRACT(YEAR FROM Employees.hireDate) = 1986 
-		AND Departments.departmentName IN ('Sales', 'Development') 
-	AND Employees.sex = 'M';
+	WHERE EXTRACT(YEAR FROM Employees.hireDate) = 1986
+		AND Employees.sex = 'M'
+		AND Departments.departmentName IN ('Sales', 'Development');
