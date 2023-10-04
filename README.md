@@ -12,7 +12,7 @@ To ensure data integrity and conceptualize the data set, I run the queries in my
 
 •	The company has 300,024 employees.
 
-•	The company’s gender distribution is 60% men and 40% woman.
+•	The company’s gender distribution is 60% men and 40% women.
 
 •	The company has nine departments run by 24 managers: Marketing, Finance, Human Resources, Production, Development, Quality Management, Sales, Research, and Customer Service.
 
