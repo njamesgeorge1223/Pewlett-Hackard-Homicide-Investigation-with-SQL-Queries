@@ -22,7 +22,7 @@ To ensure data integrity and conceptualize the data set, I run the queries in my
 
 •	The most common job title is Staff and the least common is Manager.
 
-•	Although many employees share common first or last names, the percent of employees with a distinct first and last name is 93.1%.
+•	While many employees share common first or last names, the percent of employees with a distinct first and last name is 93.1%.
 
 To derive a short list of suspects I start with broad queries and work my way down to narrow ones.  This is the list of my initial five questions to the Postgres Database and the results.
 
