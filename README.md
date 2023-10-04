@@ -49,7 +49,7 @@ Although accurately incorporating case details, the initial queries produced too
 2. Which employees were Department Managers in Sales or Development?
 <img width="1065" alt="HomicideInvestigationSuspectsQuery2" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/379863bc-bece-46be-8bf7-b7a7ca44a98e">
 
-3. Which employees were hired in 1986 and were Department Managers in Sales or Development?
+3. Which employees were men, hired in 1986, and were Department Managers in Sales or Development?
 <img width="1066" alt="HomicideInvestigationSuspectsQuery3" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/0f840108-fb47-412b-92d1-a465adb2ed36">
 
 From this analysis, I have two possible suspects for my supervisor: Hercules Benzmuller, an engineer in the Production Department; and Hauke Zhang, a manager in the Sales Department. 
