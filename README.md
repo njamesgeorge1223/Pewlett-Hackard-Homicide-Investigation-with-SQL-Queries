@@ -24,14 +24,26 @@ To ensure data integrity and conceptualize the data set, I run the queries in my
 
 •	Although many employees share common first or last names, the percent of employees with a distinct first and last name is 93.1%.
 
-To derive a short list of suspects I start with broad queries and work my way down to narrow ones.  This is a listd of my queries to the Postgres Database and the results.
+To derive a short list of suspects I start with broad queries and work my way down to narrow ones.  This is the list of my initial five questions to the Postgres Database and the results.
 
-Who are the Department Managers who have access to buildings after hours as well as alarm codes?
+1.	Who are the Department Managers who have access to buildings after hours as well as alarm codes?
 <img width="1150" alt="HomicideInvestigationManagersQuery1" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/47907ba5-2d00-4406-8089-043a9f4462a2">
 
+2. Who are the employees hired in 1986?
+<img width="1055" alt="HomicideInvestigationEmployeesQuery2" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/ad726132-750b-471d-9634-67327d54b18f">
+
+3. Who are the employees with the first name, Hercules, and a last name starting with the letter, B?
+<img width="1066" alt="HomicideInvestigationEmployeesQuery3" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/4ebb5eae-fe99-4a05-a23f-6ce2265e1a47">
+
+4. Who are the employees in the Sales Department?
+<img width="1067" alt="HomicideInvestigationEmployeesQuery5" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/b03bd479-05a6-4961-9e51-42ffce71ca7a">
+
+5. Who are the employees in the Sales and Development Departments?
+<img width="1064" alt="HomicideInvestigationEmployeesQuery6" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/034b2fa8-2d6b-42d3-8741-456348f838a4">
 
 
 
+   
 
 
 
