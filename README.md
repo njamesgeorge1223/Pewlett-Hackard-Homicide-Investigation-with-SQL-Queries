@@ -18,7 +18,7 @@ To ensure data integrity and conceptualize the data set, I run the queries in my
 
 •	Although the company maintains nine separate departments, 10.5% of the employees belong to two departments and 89.5% belong to one department; managers only belong to and manage one department.
 
-•	The company has seven job titles, and every employee has only one: Staff, Senior Staff, Assistant Engineer, Engineer, Senior Engineer, Technique Leader, and Manager.
+•	Each employee has only one of seven possible job titles: Staff, Senior Staff, Assistant Engineer, Engineer, Senior Engineer, Technique Leader, and Manager.
 
 •	The most common job title is Staff and the least common is Manager.
 
