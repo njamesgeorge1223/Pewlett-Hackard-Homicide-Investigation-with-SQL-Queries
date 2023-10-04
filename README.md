@@ -41,7 +41,7 @@ To derive a short list of suspects I start with broad queries and work my way do
 5. Who are the employees in the Sales and Development Departments?
 <img width="1064" alt="HomicideInvestigationEmployeesQuery6" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/034b2fa8-2d6b-42d3-8741-456348f838a4">
 
-Although reflective of the case details, the initial queris produced too many suspect, so I combined criteria to narrow the results.
+Although accurately incorporating case details, the initial queris produced too many suspect, so I combined criteria to narrow the results.
 
 1. Who are the employees with a first name, Hercules, and a last name starting with the letter, B, whom the company hired in 1986?
 <img width="1154" alt="HomicideInvestigationSuspectsQuery1" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/5c7f972f-5436-4053-9714-d31c94d32ca3">
