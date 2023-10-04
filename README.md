@@ -26,30 +26,30 @@ To ensure data integrity and conceptualize the data set, I run the queries in my
 
 To derive a short list of suspects I start with broad queries and work my way down to narrow ones.  This is the list of my initial five questions to the Postgres Database and the results.
 
-1.	Who are the Department Managers who have access to buildings after hours as well as alarm codes?
+1.1	Who are the Department Managers who have access to buildings after hours as well as alarm codes?
 <img width="1150" alt="HomicideInvestigationManagersQuery1" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/47907ba5-2d00-4406-8089-043a9f4462a2">
 
-2. Who are the employees hired in 1986?
+1.2 Who are the employees hired in 1986?
 <img width="1055" alt="HomicideInvestigationEmployeesQuery2" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/ad726132-750b-471d-9634-67327d54b18f">
 
-3. Who are the employees with the first name, Hercules, and a last name starting with the letter, B?
+1.3 Who are the employees with the first name, Hercules, and a last name starting with the letter, B?
 <img width="1066" alt="HomicideInvestigationEmployeesQuery3" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/4ebb5eae-fe99-4a05-a23f-6ce2265e1a47">
 
-4. Who are the employees in the Sales Department?
+1.4 Who are the employees in the Sales Department?
 <img width="1067" alt="HomicideInvestigationEmployeesQuery5" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/b03bd479-05a6-4961-9e51-42ffce71ca7a">
 
-5. Who are the employees in the Sales and Development Departments?
+1.5 Who are the employees in the Sales and Development Departments?
 <img width="1064" alt="HomicideInvestigationEmployeesQuery6" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/034b2fa8-2d6b-42d3-8741-456348f838a4">
 
 Although accurately incorporating case details, the initial queries produced too many hits, so I combined criteria to reduce the number of possible suspects.
 
-1. Who are the employees with a first name, Hercules, and a last name starting with the letter, B, whom the company hired in 1986?
+2.1 Who are the employees with a first name, Hercules, and a last name starting with the letter, B, whom the company hired in 1986?
 <img width="1154" alt="HomicideInvestigationSuspectsQuery1" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/5c7f972f-5436-4053-9714-d31c94d32ca3">
 
-2. Which employees were Department Managers in Sales or Development?
+2.2 Which employees were Department Managers in Sales or Development?
 <img width="1065" alt="HomicideInvestigationSuspectsQuery2" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/379863bc-bece-46be-8bf7-b7a7ca44a98e">
 
-3. Which employees were men, hired in 1986, and were Department Managers in Sales or Development?
+2.3 Which employees were men, hired in 1986, and were Department Managers in Sales or Development?
 <img width="1066" alt="HomicideInvestigationSuspectsQuery3" src="https://github.com/njgeorge000158/Homicide-Investigation-with-SQL-Queries/assets/137228821/0f840108-fb47-412b-92d1-a465adb2ed36">
 
 From this analysis, I have two suspects for my supervisor: Hercules Benzmuller, an engineer in the Production Department; and Hauke Zhang, a manager in the Sales Department. 
