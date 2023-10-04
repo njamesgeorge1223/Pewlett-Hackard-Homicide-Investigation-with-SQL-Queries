@@ -1,4 +1,4 @@
-# **Data Modeling and SQL Queries for Employee Database**
+# **Pewlett Hackard Homicide Investigation with SQL Queries**
 
 ----
 
@@ -36,7 +36,7 @@ If you have not installed them, here are the instructions:
 
 ----
 
-The administrative and development tool, pgAdmin4, uses the CSV files in the Resources folder for populating the database tables.  Also, with pgAdmin4, the two SQL scripts create the database tables and run the queries.
+The administrative and development tool, pgAdmin4, uses the CSV files in the Resources folder for populating the database tables.  Also, with pgAdmin4, the three SQL scripts create the database tables and run the queries.
 
 DepartmentIDPerEmployee.csv
 
@@ -74,7 +74,7 @@ n/a
 
 #### SQL script
 
-TableSchemata.sql, EmployeeQueries.sql
+CreateTableSchemata.sql, DataIntegrityQueries.sql, InvestigationQueries.sql
 
 #### Software
 
@@ -90,33 +90,123 @@ pgAdmin4, Postgres
 
 #### main branch 
 
-|&rarr; [./EmployeeQueries.sql](./EmployeeQueries.sql)
+|&rarr; [./CreateTableSchemata.sql](./CreateTableSchemata.sql)
 
-|&rarr; [./README.TECHNICAL.md](./README.TECHNICAL.md)
+|&rarr; [./DataIntegrityQueries.sql](./DataIntegrityQueries.sql)
+
+|&rarr; [./InvestigationQueries.sql](./InvestigationQueries.sql)
 
 |&rarr; [./README.md](./README.md)
 
-|&rarr; [./TableSchemata.sql](./TableSchemata.sql)
+|&rarr; [./README.TECHNICAL.md](./README.TECHNICAL.md)
 
 |&rarr; [./Images/](./Images/)
 
-  &emsp; |&rarr; [./Images/Query1.png](./Images/Query1.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentIDPerEmployeeQuery1.png](./Images/DBIntegrityDepartmentIDPerEmployeeQuery1.png)
   
-  &emsp; |&rarr; [./Images/Query2.png](./Images/Query2.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentIDPerEmployeeQuery2.png](./Images/DBIntegrityDepartmentIDPerEmployeeQuery2.png)
   
-  &emsp; |&rarr; [./Images/Query3.png](./Images/Query3.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentIDPerEmployeeQuery3.png](./Images/DBIntegrityDepartmentIDPerEmployeeQuery3.png)
   
-  &emsp; |&rarr; [./Images/Query4.png](./Images/Query4.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentIDPerEmployeeQuery4.png](./Images/DBIntegrityDepartmentIDPerEmployeeQuery4.png)
   
-  &emsp; |&rarr; [./Images/Query5.png](./Images/Query5.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentIDPerEmployeeQuery5.png](./Images/DBIntegrityDepartmentIDPerEmployeeQuery5.png)
   
-  &emsp; |&rarr; [./Images/Query6.png](./Images/Query6.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentIDPerEmployeeQuery6.png](./Images/DBIntegrityDepartmentIDPerEmployeeQuery6.png)
   
-  &emsp; |&rarr; [./Images/Query7.png](./Images/Query7.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentManagersQuery1.png](./Images/DBIntegrityDepartmentManagersQuery1.png)
   
-  &emsp; |&rarr; [./Images/Query8.png](./Images/Query8.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentManagersQuery2.png](./Images/DBIntegrityDepartmentManagersQuery2.png)
 
-  &emsp; |&rarr; [./Images/QuickDBD-PewlettHackardSQLChallenge.png](./Images/QuickDBD-PewlettHackardSQLChallenge.png)
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentManagersQuery3.png](./Images/DBIntegrityDepartmentManagersQuery3.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentManagersQuery4.png](./Images/DBIntegrityDepartmentManagersQuery4.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentManagersQuery5.png](./Images/DBIntegrityDepartmentManagersQuery5.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentsQuery1.png](./Images/DBIntegrityDepartmentsQuery1.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityDepartmentsQuery2.png](./Images/DBIntegrityDepartmentsQuery2.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeeJobTitlesQuery1.png](./Images/DBIntegrityEmployeeJobTitlesQuery1.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeeJobTitlesQuery2.png](./Images/DBIntegrityEmployeeJobTitlesQuery2.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeeSalariesQuery1.png](./Images/DBIntegrityEmployeeSalariesQuery1.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeeSalariesQuery2.png](./Images/DBIntegrityEmployeeSalariesQuery2.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeeSalariesQuery3.png](./Images/DBIntegrityEmployeeSalariesQuery3.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeeSalariesQuery4.png](./Images/DBIntegrityEmployeeSalariesQuery4.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery1.png](./Images/DBIntegrityEmployeesQuery1.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery2.png](./Images/DBIntegrityEmployeesQuery2.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery3.png](./Images/DBIntegrityEmployeesQuery3.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery4.png](./Images/DBIntegrityEmployeesQuery4.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery5.png](./Images/DBIntegrityEmployeesQuery5.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery6.png](./Images/DBIntegrityEmployeesQuery6.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery7.png](./Images/DBIntegrityEmployeesQuery7.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery8.png](./Images/DBIntegrityEmployeesQuery8.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery9.png](./Images/DBIntegrityEmployeesQuery9.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery10.png](./Images/DBIntegrityEmployeesQuery10.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery11.png](./Images/DBIntegrityEmployeesQuery11.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery12.png](./Images/DBIntegrityEmployeesQuery12.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery13.png](./Images/DBIntegrityEmployeesQuery13.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery14.png](./Images/DBIntegrityEmployeesQuery14.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery15.png](./Images/DBIntegrityEmployeesQuery15.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery16.png](./Images/DBIntegrityEmployeesQuery16.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery17.png](./Images/DBIntegrityEmployeesQuery17.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery18.png](./Images/DBIntegrityEmployeesQuery18.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery19.png](./Images/DBIntegrityEmployeesQuery19.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery20.png](./Images/DBIntegrityEmployeesQuery20.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery21.png](./Images/DBIntegrityEmployeesQuery21.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery22.png](./Images/DBIntegrityEmployeesQuery22.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery23.png](./Images/DBIntegrityEmployeesQuery23.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery24.png](./Images/DBIntegrityEmployeesQuery24.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery25.png](./Images/DBIntegrityEmployeesQuery25.png)
+
+  &emsp; |&rarr; [./Images/DBIntegrityEmployeesQuery26.png](./Images/DBIntegrityEmployeesQuery26.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationEmployeesQuery1.png](./Images/HomicideInvestigationEmployeesQuery1.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationEmployeesQuery2.png](./Images/HomicideInvestigationEmployeesQuery2.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationEmployeesQuery3.png](./Images/HomicideInvestigationEmployeesQuery3.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationEmployeesQuery4.png](./Images/HomicideInvestigationEmployeesQuery4.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationManagersQuery1.png](./Images/HomicideInvestigationManagersQuery1.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationSuspectsQuery1.png](./Images/HomicideInvestigationSuspectsQuery1.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationSuspectsQuery2.png](./Images/HomicideInvestigationSuspectsQuery2.png)
+
+  &emsp; |&rarr; [./Images/HomicideInvestigationSuspectsQuery3.png](./Images/HomicideInvestigationSuspectsQuery3.png)
   
   &emsp; |&rarr; [./Images/README.md](./Images/README.md)
 
