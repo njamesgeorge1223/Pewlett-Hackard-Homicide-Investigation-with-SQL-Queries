@@ -1,4 +1,4 @@
-![B3ZQ7JZBXFL7LGYWYBFIEDFVWA](https://github.com/njgeorge000158/Data-Modeling-and-SQL-Queries-for-Employee-Database/assets/137228821/f7085dd1-4539-4a8c-8e58-2c440dad585f)
+![Homicide](https://github.com/njamesgeorge1223/Pewlett-Hackard-Homicide-Investigation-with-SQL-Queries/assets/152452572/6c046a67-bdfc-44f9-ad57-12ce933d7fe6)
 
 # Pewlett Hackard Homicide Investigation
 ----
